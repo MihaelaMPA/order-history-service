@@ -19,8 +19,7 @@ public class OrderHistoryService {
             throw new CallDeclinedException("Something bad happened");
         }
         counter++;
-        System.out.println("------> calls " + counter);
-        //counter <= 5 || counter >=8  -> CB heals
+
         if (counter <= 5 || counter >= 8) {
             return orderHistoryList;
         } else {
