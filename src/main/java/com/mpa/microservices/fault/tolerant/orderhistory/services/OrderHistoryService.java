@@ -12,12 +12,9 @@ public class OrderHistoryService {
             "[Head First Java] - Kathy Sierra & Bert Bates",
             "[Modern Java in Action] - Raoul-Gabriel, Urma Mario, Fusco Alan Mycroft",
             "[Head First Object-Oriented Analysis Design] - Brett D. McLaughlin, Gary Pollice & David West");
-    private int counter = 1;
+    private static int counter = 1;
 
-    public List<String> getOrderHistoryCB(String id) {
-        if ("2".equals(id)) {
-            throw new CallDeclinedException("Something bad happened");
-        }
+    public List<String> getOrderHistoryCB() {
         counter++;
 
         if (counter <= 5 || counter >= 8) {
@@ -25,6 +22,10 @@ public class OrderHistoryService {
         } else {
             throw new CallDeclinedException("Something bad happened");
         }
+    }
+
+    public List<String> getOrderHistoryCBWithException() {
+        throw new CallDeclinedException("Something bad has happened");
     }
 
     public List<String> getOrderHistoryRL() {
